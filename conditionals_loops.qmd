@@ -1,0 +1,98 @@
+---
+title: "conditionals_loops"
+format: html
+editor: visual
+---
+
+#### Task 1 
+Create an object called pm2_5
+```{r}
+pm2_5 <- 48
+```
+
+Now lets make an if else for whats safe
+
+```{r}
+if (pm2_5 < 100){
+  print("Low to moderate risk")
+}else if (pm2_5>= 100 & pm2_5 <150){
+  print("Unhealthy for sensitive groups")
+}else if (pm2_5 >= 150){
+  print("Health risk present")
+}
+```
+
+#### Task 2
+Ok we are going to save some species and see which are blue whales!!
+
+```{r}
+species <- "grey whale"
+
+#Ok now we make the if statement
+if(stringr::str_detect(species, "whale")){ #detect string "whale" in species 
+  print("you found a whale")
+} else {
+  print("you didnt find shit")
+}
+
+```
+That works great
+
+#### Task 3
+oh cool here we do price changes
+
+```{r}
+base_burrito <- 6.5
+
+main_ingredient <- "veggie"
+main_ingredient <- "steak"
+main_ingredient <- "chicken"
+
+```
+ok now we need an if statement for the change in price based on main ingredient
+
+```{r}
+if (main_ingredient == "veggie"){
+  print(base_burrito)
+}else if (main_ingredient == "chicken"){
+  print(base_burrito + 3)
+}else if (main_ingredient == "steak"){
+  print(base_burrito + 3.25)
+}
+```
+
+#### Task 4 (Usingfor)
+
+First we create a new vector called fish 
+
+```{r}
+fish_vals <- c(8,10,12,23)
+
+fish_types <- c("goldfish", "tetras", "guppies", "mollies") #this might be unnecesary 
+#lets rawdog this for loop 
+
+fish <- c(goldfish = 8, tetras = 10, guppies = 12, mollies = 23)
+```
+
+```{r}
+for (i in seq_along(fish)) {
+  print(fish[i]/53)
+}
+```
+
+#### Task 5 
+Theres already a vector called month.name
+```{r}
+month.name
+```
+oh this is so lit we're going through and printing each month is __
+
+```{r}
+#making for loop 
+for (i in seq_along(month.name)) {
+  print(paste(month.name[i],"is month",i))
+}
+```
+that was the easiest for me tbh 
+
+
